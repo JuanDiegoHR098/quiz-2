@@ -58,20 +58,20 @@ class Mat:
                     plt.ylabel('Amplitud')
                     plt.grid(True)
 
-                    print("Suma de sensores")
+                    print("\nSuma de sensores\n")
 
                     sub1= int(input("Ingrese el canal que desea graficar:"))
+                    canal2= int(input("Ingrese otro canal a graficar"))
                     inicio1= int(input( "Muestra inicial:"))
                     final1= int(input("Muestra final:"))
                     columna1= int(input("epoca a graficar:")) 
                     señal2=señal[sub1,inicio1:final1,columna1]
 
-                    # sub2= int(input("Ingrese el canal que desea graficar:"))
-                    canal2= int(input("Ingrese otro canal a graficar")) 
+                    
                     señal3= señal[canal2,inicio1:final1,columna1]
 
                     suma = señal2 + señal3
-                    ruido = np.random.normal(0, 0.2, suma.shape)  # Incremento de la desviación estándar del ruido
+                    ruido = np.random.normal(0, 0.2, suma.shape)  
                     suma_con_ruido = suma + ruido
                     tiempo_ms = np.linspace(inicio1, final1, len(suma_con_ruido))
 
@@ -101,13 +101,13 @@ class Csv:
             for i in self.csv.keys():
                 contador+=1
                 print(f"{contador}. clave: {i}")
-            inicio= input("Ingrese la clave del archivo csv que desea graficar:")
+            inicio= input("\nIngrese la clave del archivo csv que desea graficar:")
             csv2= self.csv.get(inicio)
-            print("El archivo CSV contiene las siguientes columnas:")
+            print("\nEl archivo CSV contiene las siguientes columnas:")
             for col in csv2.columns:
                 print(col)
             
-            selected_column = input("Ingrese el nombre de la columna a graficar: ")
+            selected_column = input("\nIngrese el nombre de la columna a graficar: ")
             plt.figure(figsize=(10, 5))
             plt.subplot(1,2,1)
             plt.hist(csv2[selected_column], label=selected_column)
@@ -117,7 +117,7 @@ class Csv:
             plt.legend()
             plt.grid(True)
 
-            print("Suma de columnas")
+            print("\nSuma de columnas\n")
 
             col1= input("Ingrese nombre de columna a sumar")
             col2= input("Ingrese nombre de columna a sumar")
