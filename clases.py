@@ -22,14 +22,14 @@ class Mat:
             contador= 0
             for i in self.mat.items():
                 contador+=1
-                print(f"{contador}.calve:{i[0]} :{sio.whosmat(i[0])}")
+                print(f"{contador}.calve: {i[0]} : {sio.whosmat(i[0])}")
             while True:
                 try:
                     
-                    select= input("Ingrese la clave de la matriz que desea graficar:")
+                    select= input("\nIngrese la clave de la matriz que desea graficar:")
                     cargar= sio.loadmat(select)
-                    nombre= input("ingrese nombre de la matriz a graficar:")
-                    sub= int(input("Ingrese el canal que desea graficar:"))
+                    nombre= input("\ningrese nombre de la matriz a graficar:")
+                    sub= int(input("\nIngrese el canal que desea graficar:"))
                     inicio= int(input( "Inicio de la muestra a graficar:"))
                     final= int(input("Final de muestra a graficar:"))
                     columna= int(input("Epoca:")) 

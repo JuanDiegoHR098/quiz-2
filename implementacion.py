@@ -19,12 +19,8 @@ def main():
                 direccion=input("Ingrese la direccion del archivo:")
                 csv.ingresar_CSV(direccion)
             if entrada==3:
-                opcion= int(input("1.Graficar MAT\n2.graficar CSV"))
-                if opcion== 1:
-                    print(mat.graficar_Mat())
-
+                print(mat.graficar_Mat())
             if entrada==4:
-                
                 print(csv.mostrarInformacion())
 
             if entrada==5:
